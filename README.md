@@ -1,15 +1,14 @@
-
 # learnify-app
 
-A boilerplate Flutter project with:
+A clean and scalable Flutter app for NET exam preparation with:
 
-- 🧭 GoRouter for navigation  
-- 🧠 Riverpod for state management (with MVVM pattern)  
-- 🗂️ Clean folder structure  
-- 🌗 Light/Dark theme support  
-- 📦 FVM support for consistent Flutter version across teams  
-- 🧑‍💻 Shared VS Code settings for all developers  
-- 🧭 Gap package for spaces  
+- 🧭 GoRouter for navigation
+- 🧠 Riverpod for state management (with MVVM pattern)
+- 🗂️ Clean folder structure
+- 🌗 Light/Dark theme support
+- 📦 FVM support for consistent Flutter version across teams
+- 🧑‍💻 Shared VS Code settings for all developers
+- 🧭 Gap package for spaces
 - ✨ Custom extensions for theme, colorScheme, padding, and screen dimensions
 
 ---
@@ -18,34 +17,35 @@ A boilerplate Flutter project with:
 
 ```
 lib/
-├── core/                                # Core configurations shared across the app
-│   ├── theme/                           # App-wide theme files (light/dark themes, text styles, etc.)
-│   └── router/                          # App navigation using GoRouter
+├── core/                                # Core configurations and global utilities
+│   ├── theme/                           # App-wide themes (light/dark, colors, text styles)
+│   ├── router/                          # GoRouter navigation configuration
+│   └── extensions/                      # Custom Dart/Flutter extensions (e.g., on String, BuildContext)
 │
-├── features/                            # Feature-based modules (each feature has its own clean architecture layers)
+├── features/                            # Feature-based structure following clean architecture
 │   ├── home/                            # Home feature
 │   ├── module/                          # Module feature
 │   ├── pyq/                             # Previous Year Questions feature
 │   ├── leaderboard/                     # Leaderboard feature
-│   └── quiz/                            # Quiz feature (example below shows layered structure)
-│       ├── data/                        # Handles data sources (Dio API calls, models, DTOs)
-│       │   ├── models/                  # Data Transfer Objects (DTOs) / Models for API response parsing
-│       │   └── repository/              # Implements domain repositories using Dio or other sources
+│   └── quiz/                            # Quiz feature
+│       ├── data/                        # Handles external data sources (API, local storage)
+│       │   ├── models/                  # DTOs / API models for parsing server response
+│       │   └── repository/              # Implements domain-level abstract repositories using Dio
 │       │
-│       ├── domain/                      # Business logic layer (pure Dart)
-│       │   ├── entities/                # Domain models (used across app)
-│       │   └── repository/              # Abstract repository contracts (to be implemented by data layer)
+│       ├── domain/                      # Business logic, abstract contracts (pure Dart)
+│       │   ├── entities/                # Core domain models used in the app logic
+│       │   └── repository/              # Abstract repository contracts
 │       │
-│       └── presentation/                # UI + State Management (screens, widgets, providers)
-│           ├── screens/                 # UI screens for quiz (e.g., QuizListScreen, QuizDetailScreen)
-│           ├── widgets/                 # Reusable widgets specific to the quiz feature
-│           └── providers/               # Riverpod providers related to quiz state
+│       └── presentation/                # UI + Riverpod state for the quiz feature
+│           ├── screens/                 # UI screens (e.g., quiz list, quiz detail)
+│           ├── widgets/                 # Reusable quiz-specific widgets
+│           └── providers/               # Riverpod providers for quiz logic
 │
-├── providers/                           # Global Riverpod providers (e.g., theme, auth, Dio client)
+├── providers/                           # Global Riverpod providers (e.g., Dio, auth, theme)
 │
-├── presentation/                        # Shared UI components across the app (buttons, cards, layouts)
+├── presentation/                        # Shared UI widgets/components used across multiple features
 │
-├── main.dart                            # Entry point of the Flutter app (initializes theme, routing, etc.)
+├── main.dart                            # App entry point – sets up theme, GoRouter, and providers
 
 ```
 
