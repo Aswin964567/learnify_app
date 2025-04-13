@@ -1,5 +1,5 @@
 
-# flutter-app-template
+# learnify-app
 
 A boilerplate Flutter project with:
 
@@ -18,73 +18,92 @@ A boilerplate Flutter project with:
 
 ```
 lib/
-├── core/
-│   ├── router/        # App-wide navigation (GoRouter)
-│   └── theme/         # Light & dark theme configuration
-├── features/
-│   └── counter/
-│       ├── presentation/ # UI layer
-│       └── providers/    # Riverpod state providers
-├── providers/             # Global app-level providers
-├── presentation/          # Shared widgets across features
-└── main.dart
-```
+├── core/                                # Core configurations shared across the app
+│   ├── theme/                           # App-wide theme files (light/dark themes, text styles, etc.)
+│   └── router/                          # App navigation using GoRouter
+│
+├── features/                            # Feature-based modules (each feature has its own clean architecture layers)
+│   ├── home/                            # Home feature
+│   ├── module/                          # Module feature
+│   ├── pyq/                             # Previous Year Questions feature
+│   ├── leaderboard/                     # Leaderboard feature
+│   └── quiz/                            # Quiz feature (example below shows layered structure)
+│       ├── data/                        # Handles data sources (Dio API calls, models, DTOs)
+│       │   ├── models/                  # Data Transfer Objects (DTOs) / Models for API response parsing
+│       │   └── repository/              # Implements domain repositories using Dio or other sources
+│       │
+│       ├── domain/                      # Business logic layer (pure Dart)
+│       │   ├── entities/                # Domain models (used across app)
+│       │   └── repository/              # Abstract repository contracts (to be implemented by data layer)
+│       │
+│       └── presentation/                # UI + State Management (screens, widgets, providers)
+│           ├── screens/                 # UI screens for quiz (e.g., QuizListScreen, QuizDetailScreen)
+│           ├── widgets/                 # Reusable widgets specific to the quiz feature
+│           └── providers/               # Riverpod providers related to quiz state
+│
+├── providers/                           # Global Riverpod providers (e.g., theme, auth, Dio client)
+│
+├── presentation/                        # Shared UI components across the app (buttons, cards, layouts)
+│
+├── main.dart                            # Entry point of the Flutter app (initializes theme, routing, etc.)
 
----
-
-## 🚀 Getting Started
-
-### 1. Use this Template
-
-- Click **"Use this template"** on GitHub  
-- Clone the newly created repo:
-
-```bash
-git clone https://github.com/AppliedCognito/flutter-app-template.git
-cd flutter_app_template
 ```
 
 ---
 
 ## ⚙️ Setup Instructions
 
-### 2. Install Dependencies
-
-#### If you're using **FVM** (recommended):
+### 1. Clone the Repository
 
 ```bash
-fvm install
-fvm use
-fvm flutter pub get
+git clone https://github.com/AppliedCognito/learnify_app.git
+cd learnify_app
 ```
 
-#### If you're **not using FVM**:
+### 2. Set Up FVM
 
-Make sure your Flutter version matches the one in `.fvm/fvm_config.json`, then:
+#### 🟡 Flutter Version Info
 
-```bash
-flutter pub get
+This project uses **Flutter `3.29.2`**, as defined in `.fvm/fvm_config.json`:
+
+```json
+{
+  "flutterSdkVersion": "3.29.2"
+}
 ```
 
----
+#### ✅ Set the Version with FVM
 
-## 📌 Why FVM?
-
-**FVM (Flutter Version Management)** ensures everyone on the team uses the **same Flutter version**, avoiding version mismatch issues and environment bugs.
-
-### To install FVM:
+If you don’t have FVM installed:
 
 ```bash
 dart pub global activate fvm
 ```
 
-Then add it to your path:
+Then, install and use the required Flutter version:
 
 ```bash
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+fvm use 3.29.2
+fvm install
 ```
 
-For Windows users, add it via Environment Variables.  
+### 3. Use FVM for Flutter Commands
+
+Run all Flutter commands using FVM:
+
+```bash
+fvm flutter pub get
+fvm flutter run
+```
+
+> 💡 After running once with `fvm flutter run`, **VS Code will detect the FVM version**, so you can use the built-in Run button or shortcuts (`F5`) without typing `fvm flutter run` every time.
+
+> ⚠️ Avoid using `flutter run` directly unless your system Flutter version matches the FVM version.
+
+## 📌 Why FVM?
+
+**FVM (Flutter Version Management)** ensures everyone on the team uses the **same Flutter version**, avoiding version mismatch issues and environment bugs.
+
 More help: [https://fvm.app/docs/getting_started/installation](https://fvm.app/docs/getting_started/installation)
 
 ---
@@ -122,17 +141,6 @@ extension ThemeContext on BuildContext {
 }
 ```
 
-Usage:
-
-```dart
-Text(
-  'Hello',
-  style: context.textTheme.bodyMedium?.copyWith(
-    color: context.colorScheme.primary,
-  ),
-);
-```
-
 ### ✅ Padding Extensions
 
 ```dart
@@ -143,7 +151,7 @@ extension PaddingContext on BuildContext {
 }
 ```
 
-Usage:
+### ✅ Usage Example in Widgets
 
 ```dart
 Padding(
@@ -156,9 +164,7 @@ Padding(
 
 ## 🎨 ColorScheme + AppColors Usage
 
-This template uses `ColorScheme` for theme-aware UI. All semantic colors like `primary`, `onPrimary`, `secondary`, `error`, etc., are mapped using `AppColors`.
-
-`AppColors` provides consistent base colors, which are used to generate the `ColorScheme` for both light and dark themes.
+This template uses `ColorScheme` for theme-aware UI.
 
 ```dart
 class AppColors {
@@ -171,7 +177,7 @@ class AppColors {
 }
 ```
 
-Then these are mapped in `ThemeData.colorScheme`:
+Then mapped in `ThemeData.colorScheme`:
 
 ```dart
 ThemeData(
@@ -185,25 +191,6 @@ ThemeData(
   ),
 )
 ```
-
-### ✅ Usage Example in Widgets
-
-```dart
-Container(
-  padding: context.paddingS,
-  color: AppColors.primary, // Shows actual color (VS Code color box)
-  child: Text(
-    'Primary container',
-    style: context.textTheme.bodyMedium?.copyWith(
-      color: AppColors.onPrimary, // Text color on primary
-    ),
-  ),
-);
-```
-
-🖼️ In VS Code, using `AppColors.primary` will show a small color preview box beside the color value, useful for visual identification.
-
-> Prefer using `context.colorScheme.primary` when building theme-aware widgets that auto-adjust for dark/light modes.
 
 ---
 
