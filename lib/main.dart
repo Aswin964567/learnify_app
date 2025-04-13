@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/core/routes/router_config.dart';
-import 'package:flutter_app_template/core/theme/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:learnify_app/core/routes/router_config.dart';
+import 'package:learnify_app/core/theme/theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

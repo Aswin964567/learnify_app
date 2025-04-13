@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/core/theme/app_bar_theme.dart';
-import 'package:flutter_app_template/core/theme/button_theme.dart';
-import 'package:flutter_app_template/core/theme/colors/app_color_schemes.dart';
-import 'package:flutter_app_template/core/theme/text_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:learnify_app/core/theme/app_bar_theme.dart';
+import 'package:learnify_app/core/theme/button_theme.dart';
+import 'package:learnify_app/core/theme/colors/app_color_schemes.dart';
+import 'package:learnify_app/core/theme/text_theme.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
