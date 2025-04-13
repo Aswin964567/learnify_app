@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/core/extensions/context_extensions.dart';
-import 'package:flutter_app_template/core/theme/colors/app_colors.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/extensions/context_extensions.dart';
+import 'package:learnify_app/core/theme/colors/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
