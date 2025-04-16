@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 /// App-defined custom color palette — used for consistent theming
 class AppColors {
   // Core brand colors
-  static const Color primary = Color.fromARGB(255, 232, 9, 9); // Blue
+  static const Color primary = Color(0xFF5B4BE9); // Blue
   static const Color onPrimary = Colors.white;
 
   static const Color secondary = Color(0xFFFFA000); // Amber
   static const Color onSecondary = Colors.black;
+
+  // White and black
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
 
   // Backgrounds and surfaces
   static const Color background = Colors.white;
