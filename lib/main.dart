@@ -16,7 +16,7 @@ class MyApp extends ConsumerWidget {
       title: 'Learnify Application',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+      // darkTheme: AppTheme.darkTheme,
       routerConfig: appRouter,
     );
   }
