@@ -9,6 +9,10 @@ class AppColors {
   static const Color secondary = Color(0xFFFFA000); // Amber
   static const Color onSecondary = Colors.black;
 
+  // White and black
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+
   // Backgrounds and surfaces
   static const Color background = Colors.white;
   static const Color onBackground = Colors.black;
