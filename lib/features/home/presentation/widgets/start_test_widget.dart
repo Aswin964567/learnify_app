@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -35,7 +36,7 @@ class StartTestWidget extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            Gap(16),
 
             // Title
             Text(
@@ -45,7 +46,7 @@ class StartTestWidget extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+            Gap(8),
 
             // Subtitle
             Text(
@@ -55,7 +56,7 @@ class StartTestWidget extends StatelessWidget {
                 color: Colors.white70,
               ),
             ),
-            const SizedBox(height: 16),
+            Spacer(),
 
             // Info Row
             Row(
@@ -82,7 +83,8 @@ class StartTestWidget extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+
+            Spacer(),
 
             // Start Test Button
             SizedBox(
