@@ -1,6 +1,4 @@
-// home appbar- Aiswarya
-// use lucide icons
-// eg: Icon(LucideIcons.home)
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lucide_icons/lucide_icons.dart';
