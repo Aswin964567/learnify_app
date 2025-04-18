@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 /// Access theme, colors, and text styles easily
@@ -34,7 +33,10 @@ extension PaddingContext on BuildContext {
   EdgeInsets get paddingL => const EdgeInsets.all(24);
   EdgeInsets get paddingXL => const EdgeInsets.all(32);
 
-  EdgeInsets get paddingHorizontal => const EdgeInsets.symmetric(horizontal: 16);
+  EdgeInsets get paddingHorizontal =>
+      const EdgeInsets.symmetric(horizontal: 16);
+  EdgeInsets get paddingHorizontalLarge =>
+      const EdgeInsets.symmetric(horizontal: 32);
   EdgeInsets get paddingVertical => const EdgeInsets.symmetric(vertical: 16);
   EdgeInsets get paddingTopSafe => EdgeInsets.only(top: topInset + 16);
   EdgeInsets get paddingBottomSafe => EdgeInsets.only(bottom: bottomInset + 16);
@@ -44,5 +46,3 @@ extension PaddingContext on BuildContext {
 extension AppBarContext on BuildContext {
   double get appBarHeight => kToolbarHeight + topInset;
 }
-
-

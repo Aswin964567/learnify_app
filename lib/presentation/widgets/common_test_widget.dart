@@ -7,24 +7,28 @@ import 'package:lucide_icons/lucide_icons.dart';
 class CommonTestWidget extends StatelessWidget {
   final int totalQuestions;
   final int answeredQuestions;
+  final bool highlight;
 
   const CommonTestWidget({
     super.key,
     this.totalQuestions = 10,
     this.answeredQuestions = 6,
+    this.highlight = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    // Calculate progress
     double progress =
         totalQuestions == 0 ? 0 : answeredQuestions / totalQuestions;
 
     return Container(
       padding: context.paddingM,
+      width: context.screenWidth * 0.6,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: highlight ? Color(0xffD5E8FF) : AppColors.white,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade300),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,36 +40,39 @@ class CommonTestWidget extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          const Gap(10),
+          const Gap(6),
           Text(
             'Practice basic arithmetic and problem solving',
             style: context.textTheme.labelSmall?.copyWith(
-              color: Colors.grey,
+              color: Colors.grey.shade600,
               fontWeight: FontWeight.w600,
             ),
           ),
-          const Gap(10),
+          const Gap(6),
           Row(
             children: [
               const Icon(LucideIcons.bookOpen, size: 15),
-              const Gap(10),
+              const Gap(6),
               Text(
                 '$totalQuestions questions',
                 style: context.textTheme.labelSmall?.copyWith(
                   fontWeight: FontWeight.w700,
-                  color: Colors.grey,
+                  color: Colors.grey.shade600,
                 ),
               ),
             ],
           ),
-          const Gap(12),
-
-          // Progress indicator
+          const Gap(10),
           LinearProgressIndicator(
-            value: progress,
-            backgroundColor: Colors.grey.withAlpha(55),
-            color: Colors.black,
-            minHeight: 20,
+            value:
+                progress == 0 ? 0 : progress, // Only progress is shown when > 0
+            backgroundColor: Colors.grey.shade200,
+            color:
+                progress == 0
+                    ? Colors.white
+                    : Colors
+                        .black, // Show gray when no progress, black when progress
+            minHeight: 10,
             borderRadius: BorderRadius.circular(10),
           ),
         ],

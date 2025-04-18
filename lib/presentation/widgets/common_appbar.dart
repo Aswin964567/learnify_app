@@ -1,18 +1,20 @@
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
-class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppbar({super.key});
+class CommonAppbar extends StatelessWidget implements PreferredSizeWidget {
+  const CommonAppbar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
       title: const Text('Learnify'),
+      pinned: true,
+      floating: true,
+      snap: true,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 16.0), // Add space to the right

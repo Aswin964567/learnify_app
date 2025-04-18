@@ -13,9 +13,9 @@ class AppTextTheme {
     titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
 
     // Body styles – for general content text and paragraphs
-    bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-    bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-    bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+    bodyLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+    bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+    bodySmall: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
 
     // Label styles – typically used for buttons, inputs, chips, captions
     labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),

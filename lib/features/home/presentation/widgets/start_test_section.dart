@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:learnify_app/features/home/presentation/providers/start_test_provider.dart';
 import 'package:learnify_app/features/home/presentation/widgets/start_test_widget.dart';
@@ -24,20 +25,20 @@ class StartTestSection extends ConsumerWidget {
         CarouselSlider.builder(
           itemCount: cards.length,
           itemBuilder: (context, index, realIndex) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: cards[index],
-            );
+            return cards[index];
           },
           options: CarouselOptions(
-            height: MediaQuery.of(context).size.height * 0.42,
+            height: MediaQuery.of(context).size.height * 0.38,
             viewportFraction: 1,
-            enlargeCenterPage: true,
+            padEnds: false,
+            // autoPlay: true,
+            // enlargeCenterPage: true,
             onPageChanged: (index, reason) {
               ref.read(startTestIndexProvider.notifier).state = index;
             },
           ),
         ),
+        Gap(10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(cards.length, (index) {

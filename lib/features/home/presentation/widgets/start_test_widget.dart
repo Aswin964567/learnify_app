@@ -9,113 +9,116 @@ class StartTestWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      margin: context.paddingM,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.primary,
-          borderRadius: BorderRadius.circular(24),
-        ),
-        padding: context.paddingM,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Illustration Placeholder
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: context.screenHeight * 0.12,
-                  child: Image.asset(
-                    'assets/images/start_test.png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ],
-            ),
-            Gap(16),
+    return Padding(
+      padding: context.paddingHorizontalLarge,
+      child: Card(
+        elevation: 4,
 
-            // Title
-            Text(
-              'Take a mock test',
-              style: context.textTheme.titleMedium?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Gap(8),
-
-            // Subtitle
-            Text(
-              'Practice basic arithmetic and problem solving',
-              // textAlign: TextAlign.center,
-              style: context.textTheme.bodySmall?.copyWith(
-                color: Colors.white70,
-              ),
-            ),
-            Spacer(),
-
-            // Info Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Icon(LucideIcons.bookOpen, color: Colors.white, size: 18),
-                const SizedBox(width: 6),
-                Text(
-                  '10 q.',
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: Colors.white70,
-                  ),
-                ),
-
-                const SizedBox(width: 16),
-
-                Icon(LucideIcons.clock, color: Colors.white, size: 18),
-                const SizedBox(width: 6),
-                Text(
-                  '180 m.',
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-
-            Spacer(),
-
-            // Start Test Button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Handle test start logic
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  padding: context.paddingM,
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'Start Test',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+        // margin: EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.primary,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          padding: context.paddingM,
+          child: Column(
+            // mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Illustration Placeholder
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: context.screenHeight * 0.12,
+                    child: Image.asset(
+                      'assets/images/start_test.png',
+                      fit: BoxFit.contain,
                     ),
-                    SizedBox(width: 8), // Space between text and icon
-                    Icon(LucideIcons.zap),
-                  ],
+                  ),
+                ],
+              ),
+              Gap(16),
+
+              // Title
+              Text(
+                'Take a mock test',
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-          ],
+              Gap(8),
+
+              // Subtitle
+              Text(
+                'Practice basic arithmetic and problem solving',
+                style: context.textTheme.labelMedium?.copyWith(
+                  color: Colors.white70,
+                ),
+              ),
+              Spacer(),
+
+              // Info Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Icon(LucideIcons.bookOpen, color: Colors.white, size: 18),
+                  const SizedBox(width: 6),
+                  Text(
+                    '10 q.',
+                    style: context.textTheme.labelMedium?.copyWith(
+                      color: Colors.white70,
+                    ),
+                  ),
+
+                  const SizedBox(width: 16),
+
+                  Icon(LucideIcons.clock, color: Colors.white, size: 18),
+                  const SizedBox(width: 6),
+                  Text(
+                    '180 m.',
+                    style: context.textTheme.labelMedium?.copyWith(
+                      color: Colors.white70,
+                    ),
+                  ),
+                ],
+              ),
+
+              Spacer(),
+
+              // Start Test Button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Handle test start logic
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    padding: context.paddingM,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Start Test',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(width: 8), // Space between text and icon
+                      Icon(LucideIcons.zap),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
