@@ -22,7 +22,6 @@ class _RecommendedSectionState extends State<RecommendedSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Gap(12),
         Padding(
           padding: const EdgeInsets.only(left: 32),
           child: Text(

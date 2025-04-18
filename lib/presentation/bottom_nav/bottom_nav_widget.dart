@@ -20,8 +20,8 @@ class BottomNavWidget extends ConsumerWidget {
       items: [
         _navItem('Home', Icon(LucideIcons.home)),
         _navItem('Learn', Icon(LucideIcons.bookOpen)),
-        _navItem('PYQ', Icon(LucideIcons.trophy)),
-        _navItem('Leaderboard', Icon(LucideIcons.fileText)),
+        _navItem('PYQ', Icon(LucideIcons.fileText)),
+        _navItem('Leaderboard', Icon(LucideIcons.trophy)),
       ],
     );
   }
