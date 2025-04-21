@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:learnify_app/core/theme/text_theme.dart';
+import 'package:learnify_app/features/leaderboard/data/leaderboard_dummy_data.dart';
 import 'package:learnify_app/features/leaderboard/presentation/widgets/common_profile_widget.dart';
 
+// Leaderboard screen with tabs and top users list.
 class LeaderboardScreen extends StatelessWidget {
   const LeaderboardScreen({super.key});
 
@@ -32,7 +35,7 @@ class LeaderboardScreen extends StatelessWidget {
                 const Gap(20),
                 Container(
                   height: 40,
-                  margin: const EdgeInsets.symmetric(horizontal: 24),
+                  margin: context.paddingHorizontal,
                   decoration: BoxDecoration(
                     color: const Color(0xFF4E40BD),
                     borderRadius: BorderRadius.circular(24),
@@ -62,6 +65,7 @@ class LeaderboardScreen extends StatelessWidget {
             Container(
               padding: context.paddingHorizontal,
               child: ProfileCard(
+                isHighlight: true,
                 name: 'Muhammed Rafsal N',
                 rank: 25,
                 points: 1250,
@@ -69,32 +73,29 @@ class LeaderboardScreen extends StatelessWidget {
             ),
 
             Expanded(
-              child: Stack(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 20),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(32),
-                        topRight: Radius.circular(32),
-                      ),
-                    ),
+              child: Container(
+                padding: context.paddingHorizontal,
+                margin: const EdgeInsets.only(
+                  top: AppConstants.leaderboardTopPadding,
+                ),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(32),
+                    topRight: Radius.circular(32),
                   ),
-
-                  // Scrollable list inside the curved area
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: 32,
-                    ), // So list starts inside the curve
-                    child: TabBarView(
-                      children: [
-                        LeaderboardList(tabName: 'Weekly'),
-                        LeaderboardList(tabName: 'All Time'),
-                      ],
-                    ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.only(
+                    top: AppConstants.leaderboardTopPadding,
+                  ), // So list starts inside the curve
+                  child: TabBarView(
+                    children: [
+                      LeaderboardList(tabName: 'Weekly'),
+                      LeaderboardList(tabName: 'All Time'),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ],
@@ -111,27 +112,22 @@ class LeaderboardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> users = List.generate(
-      15,
-      (index) => {
-        'rank': index + 1,
-        'name': 'User ${index + 1}',
-        'points': 1250 - index * 10,
-      },
-    );
+    final List<Map<String, dynamic>> users = dummyUsers;
 
-    return SingleChildScrollView(
-      padding: context.paddingHorizontal + context.paddingVertical,
-      child: Column(
-        children: List.generate(15, (index) {
-          final user = users[index];
-          return ProfileCard(
-            name: user['name'],
-            rank: user['rank'],
-            points: user['points'],
-          );
-        }),
-      ),
+    return ListView.builder(
+      padding: context.paddingBottomSafe,
+
+      itemCount: users.length,
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context, index) {
+        final user = users[index];
+        return ProfileCard(
+          backgroundColor: const Color(0xFFF2F2F2),
+          name: user['name'],
+          rank: user['rank'],
+          points: user['points'],
+        );
+      },
     );
   }
 }

@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
+import 'package:learnify_app/core/theme/text_theme.dart';
 
 import 'package:lucide_icons/lucide_icons.dart';
 
-// Reusable Profile Card
+// Profile card widget for displaying rank, name and points.
 class ProfileCard extends StatelessWidget {
   final int rank;
   final String name;
   final int points;
   final bool isHighlight;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   const ProfileCard({
     super.key,
@@ -18,15 +21,19 @@ class ProfileCard extends StatelessWidget {
     required this.name,
     required this.points,
     this.isHighlight = false,
+    this.backgroundColor,
+    this.textColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+      margin: context.paddingVerticalXS,
       padding: context.paddingM,
+
       decoration: BoxDecoration(
-        color: isHighlight ? Colors.white : const Color(0xFFF2F2F2),
+        
+        color: isHighlight ? AppColors.onPrimary : backgroundColor,
         borderRadius: BorderRadius.circular(16),
         boxShadow:
             isHighlight
@@ -45,9 +52,9 @@ class ProfileCard extends StatelessWidget {
             backgroundColor: AppColors.onPrimary,
             child: Text(
               rank.toString().padLeft(2, '0'),
-              style: TextStyle(
-                color: AppColors.primary,
+              style: AppTextTheme.textTheme.labelLarge?.copyWith(
                 fontWeight: FontWeight.bold,
+                color: AppColors.primary,
               ),
             ),
           ),
@@ -59,9 +66,9 @@ class ProfileCard extends StatelessWidget {
             children: [
               Text(
                 name,
-                style: const TextStyle(
-                  color: Color(0xFF4E40BD),
+                style: AppTextTheme.textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
+                  color: Color(0xFF4E40BD),
                 ),
               ),
 
@@ -74,12 +81,11 @@ class ProfileCard extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(LucideIcons.zap, size: 14, color: Colors.black),
+                    const Icon(LucideIcons.zap, size: 12, color: Colors.black),
                     const Gap(4),
                     Text(
                       '$points',
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style: AppTextTheme.textTheme.labelSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),

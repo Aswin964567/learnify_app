@@ -37,6 +37,8 @@ extension PaddingContext on BuildContext {
       const EdgeInsets.symmetric(horizontal: 16);
   EdgeInsets get paddingHorizontalLarge =>
       const EdgeInsets.symmetric(horizontal: 32);
+
+      EdgeInsets get paddingVerticalXS => const EdgeInsets.symmetric(vertical: 4);
   EdgeInsets get paddingVertical => const EdgeInsets.symmetric(vertical: 16);
   EdgeInsets get paddingTopSafe => EdgeInsets.only(top: topInset + 16);
   EdgeInsets get paddingBottomSafe => EdgeInsets.only(bottom: bottomInset + 16);
