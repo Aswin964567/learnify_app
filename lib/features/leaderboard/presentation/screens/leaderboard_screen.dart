@@ -74,7 +74,7 @@ class LeaderboardScreen extends StatelessWidget {
 
             Expanded(
               child: Container(
-                padding: context.paddingHorizontal,
+                // padding: context.paddingHorizontal,
                 margin: const EdgeInsets.only(
                   top: AppConstants.leaderboardTopPadding,
                 ),
@@ -121,11 +121,14 @@ class LeaderboardList extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         final user = users[index];
-        return ProfileCard(
-          backgroundColor: const Color(0xFFF2F2F2),
-          name: user['name'],
-          rank: user['rank'],
-          points: user['points'],
+        return Padding(
+          padding: context.paddingHorizontal,
+          child: ProfileCard(
+            backgroundColor: const Color(0xFFF2F2F2),
+            name: user['name'],
+            rank: user['rank'],
+            points: user['points'],
+          ),
         );
       },
     );
