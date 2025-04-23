@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:learnify_app/features/home/presentation/screens/home_screen.dart';
 import 'package:learnify_app/features/leaderboard/presentation/screens/leaderboard_screen.dart';
+import 'package:learnify_app/features/module/presentation/screens/module_screen.dart';
 
 import 'bottom_nav_controller.dart';
 import 'bottom_nav_widget.dart';
@@ -15,7 +16,7 @@ class BottomNavScaffold extends ConsumerWidget {
 
     final pages = [
       const HomeScreen(),
-      const HomeScreen(),
+      const ModuleScreen(),
       const HomeScreen(),
       const LeaderboardScreen(),
     ];
