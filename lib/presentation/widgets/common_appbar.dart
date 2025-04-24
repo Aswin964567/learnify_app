@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 class CommonAppbar extends StatelessWidget {
@@ -43,17 +45,22 @@ class CommonAppbar extends StatelessWidget {
                     color: const Color(0xFFFF6CFD),
                   ),
                   const Gap(12),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      LucideIcons.user,
-                      size: 18,
-                      color: Colors.black,
+                  GestureDetector(
+                    onTap: () {
+                      context.pushNamed(RouterConstants.profileRouteName);
+                    },
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        LucideIcons.user,
+                        size: 18,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
