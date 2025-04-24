@@ -40,7 +40,7 @@ class CommonAppbar extends StatelessWidget {
                   ),
                   const Gap(8),
                   _statPill(
-                    icon: LucideIcons.diamond,
+                    icon: LucideIcons.zap,
                     value: '1250',
                     color: const Color(0xFFFF6CFD),
                   ),
