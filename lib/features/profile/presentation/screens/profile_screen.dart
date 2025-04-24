@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/achievement_tab.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/profile_tab.dart';
@@ -21,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
+                    Gap(AppConstants.defaultPadding),
                     Padding(
                       padding: context.paddingL,
                       child: Row(

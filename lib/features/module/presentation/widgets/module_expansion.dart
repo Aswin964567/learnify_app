@@ -22,9 +22,9 @@ class ModuleExpansion extends ConsumerWidget {
           children: [
             Text(
               'Module 0${index + 1}'.padLeft(2, '0'),
-              style: context.textTheme.bodyMedium?.copyWith(
+              style: context.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
             IconButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/features/module/presentation/providers/click_provider.dart';
 import 'package:learnify_app/features/module/presentation/widgets/module_expansion.dart';
@@ -17,15 +18,14 @@ class ModuleScreen extends ConsumerWidget {
         padding: context.paddingHorizontal,
         child: Column(
           children: [
-            const Gap(20),
+            const Gap(AppConstants.defaultTopPadding),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Modules',
-                  style: context.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 24,
+                  style: context.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const Gap(90),
