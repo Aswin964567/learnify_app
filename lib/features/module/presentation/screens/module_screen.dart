@@ -14,12 +14,13 @@ class ModuleScreen extends ConsumerWidget {
     final selectedPaper = ref.watch(selectedPaperProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: context.paddingHorizontal,
-        child: Column(
-          children: [
-            const Gap(AppConstants.defaultTopPadding),
-            Row(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Gap(AppConstants.defaultTopPadding),
+          Padding(
+            padding: context.paddingHorizontal,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -66,18 +67,18 @@ class ModuleScreen extends ConsumerWidget {
                 ),
               ],
             ),
+          ),
 
-            Expanded(
-              child: ListView.builder(
-                itemCount: 8,
-                itemBuilder: (context, index) {
-                  return ModuleExpansion(index: index);
-                },
-              ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return ModuleExpansion(index: index);
+              },
             ),
-            Gap(10),
-          ],
-        ),
+          ),
+          Gap(10),
+        ],
       ),
     );
   }
