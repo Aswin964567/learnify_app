@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/achievement_tab.dart';
@@ -23,6 +24,7 @@ class ProfileScreen extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
+                    Gap(AppConstants.defaultPadding),
                     Padding(
                       padding: context.paddingL,
                       child: Row(
@@ -30,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             backgroundColor: Colors.white,
-                            radius: 15,
+                            radius: 15.5,
                             child: IconButton(
                               onPressed: () {
                                 Navigator.pop(context);
@@ -44,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           CircleAvatar(
                             backgroundColor: Colors.white,
-                            radius: 15,
+                            radius: 15.5,
                             child: IconButton(
                               onPressed: () {
                                 context.pushNamed(
