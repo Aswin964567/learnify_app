@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:learnify_app/features/profile/presentation/screens/profile_screen.dart';
+import 'package:learnify_app/features/settings/presentation/screens/settings_screen.dart';
 import 'package:learnify_app/presentation/bottom_nav/bottom_nav_scaffold.dart';
 
 final appRouter = GoRouter(
@@ -10,6 +11,11 @@ final appRouter = GoRouter(
       path: '/profilescreen',
       name: RouterConstants.profileRouteName,
       builder: (context, state) => ProfileScreen(),
+    ),
+    GoRoute(
+      path: '/settingsscreen',
+      name: RouterConstants.settingsRouteName,
+      builder: (context, state) => SettingsScreen(),
     ),
   ],
 );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
+import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/achievement_tab.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/profile_tab.dart';
 import 'package:learnify_app/features/profile/presentation/widgets/score_container.dart';
@@ -46,7 +48,11 @@ class ProfileScreen extends StatelessWidget {
                             backgroundColor: Colors.white,
                             radius: 15.5,
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                context.pushNamed(
+                                  RouterConstants.settingsRouteName,
+                                );
+                              },
                               icon: Icon(
                                 LucideIcons.settings,
                                 size: 15,
