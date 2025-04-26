@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             backgroundColor: Colors.white,
-                            radius: 15,
+                            radius: 15.5,
                             child: IconButton(
                               onPressed: () {
                                 Navigator.pop(context);
@@ -44,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           CircleAvatar(
                             backgroundColor: Colors.white,
-                            radius: 15,
+                            radius: 15.5,
                             child: IconButton(
                               onPressed: () {},
                               icon: Icon(
