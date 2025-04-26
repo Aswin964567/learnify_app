@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
-import 'package:learnify_app/core/theme/text_theme.dart';
 import 'package:learnify_app/features/leaderboard/data/leaderboard_dummy_data.dart';
 import 'package:learnify_app/features/leaderboard/presentation/widgets/common_profile_widget.dart';
 
@@ -27,7 +26,7 @@ class LeaderboardScreen extends StatelessWidget {
               children: [
                 Text(
                   'Leaderboard',
-                  style: AppTextTheme.textTheme.titleLarge?.copyWith(
+                  style: context.textTheme.titleLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

@@ -15,7 +15,7 @@ class AppTheme {
     appBarTheme: AppAppBarTheme.appBarTheme,
     elevatedButtonTheme: AppButtonTheme.elevatedButtonTheme,
     outlinedButtonTheme: AppButtonTheme.outlinedButtonTheme,
-    textTheme: AppTextTheme.textTheme,
+    textTheme: AppTextTheme.lightTextTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -24,6 +24,6 @@ class AppTheme {
     brightness: Brightness.dark,
     primarySwatch: Colors.blue,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    textTheme: AppTextTheme.textTheme,
+    textTheme: AppTextTheme.darkTextTheme,
   );
 }

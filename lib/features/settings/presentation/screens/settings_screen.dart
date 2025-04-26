@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
+import 'package:learnify_app/core/extensions/context_extensions.dart';
+
 import '../widgets/account_section.dart';
 import '../widgets/appearance_section.dart';
 import '../widgets/language_section.dart';
@@ -16,8 +19,9 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
 
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: context.paddingHorizontal,
         children: [
+          Gap(AppConstants.defaultTopPadding),
           SettingTitleSection(),
           Gap(20),
           const NotificationsSection(),
