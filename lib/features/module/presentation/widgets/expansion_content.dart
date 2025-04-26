@@ -32,7 +32,8 @@ class _ExpansionContentState extends State<ExpansionContent> {
               final item = testData[index];
               return Padding(
                 padding: const EdgeInsets.only(
-                  right: 8.0,
+                  left: 8.0,
+                  right: 3,
                 ), // Spacing between items
                 child: SizedBox(
                   width:
