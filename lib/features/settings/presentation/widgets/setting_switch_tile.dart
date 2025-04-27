@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnify_app/core/extensions/context_extensions.dart';
 
 class SettingSwitchTile extends StatelessWidget {
   final String title;
@@ -19,9 +20,20 @@ class SettingSwitchTile extends StatelessWidget {
     return SwitchListTile(
       title: Text(
         title,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: context.textTheme.titleLarge?.copyWith(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        // style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
-      subtitle: Text(subtitle, style: const TextStyle(fontSize: 12)),
+      subtitle: Text(
+        subtitle,
+        style: context.textTheme.titleMedium?.copyWith(
+          fontSize: 12,
+          // color: Colors.grey,
+        ),
+        // style: const TextStyle(fontSize: 12)
+      ),
       value: value,
       onChanged: onChanged,
       activeColor: Colors.deepPurple,
@@ -47,12 +59,9 @@ class SectionCard extends StatelessWidget {
       // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       // elevation: 4,
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey.shade300, 
-          width: 1.2, 
-        ),
+        border: Border.all(color: Colors.grey.shade300, width: 1.2),
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white, 
+        color: Colors.white,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -65,10 +74,14 @@ class SectionCard extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: context.textTheme.titleLarge?.copyWith(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
+                  // style: const TextStyle(
+                  //   fontSize: 20,
+                  //   fontWeight: FontWeight.bold,
+                  // ),
                 ),
               ],
             ),

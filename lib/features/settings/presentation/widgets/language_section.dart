@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 import 'setting_switch_tile.dart';
@@ -13,13 +14,22 @@ class LanguageSection extends StatelessWidget {
       icon: LucideIcons.globe,
       children: [
         ListTile(
-          title: const Text(
+          title: Text(
             'App Language',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: context.textTheme.bodyLarge?.copyWith(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+
+            // style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          subtitle: const Text(
+          subtitle: Text(
             'Currently set to English',
-            style: TextStyle(fontSize: 12),
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontSize: 12,
+              // color: Colors.grey,
+            ),
+            // style: TextStyle(fontSize: 12),
           ),
 
           trailing: TextButton(
