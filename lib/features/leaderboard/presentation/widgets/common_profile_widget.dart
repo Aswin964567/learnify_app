@@ -5,7 +5,7 @@ import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 // Profile card widget for displaying rank, name and points.
-class ProfileCard extends StatelessWidget {
+class CommonProfileWidget extends StatelessWidget {
   final int rank;
   final String name;
   final int points;
@@ -13,7 +13,7 @@ class ProfileCard extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
-  const ProfileCard({
+  const CommonProfileWidget({
     super.key,
     required this.rank,
     required this.name,

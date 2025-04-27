@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
-import 'package:learnify_app/features/leaderboard/data/leaderboard_dummy_data.dart';
 import 'package:learnify_app/features/leaderboard/presentation/widgets/common_profile_widget.dart';
+import 'package:learnify_app/features/leaderboard/presentation/widgets/leaderboard_list.dart';
 
 // Leaderboard screen with tabs and top users list.
 class LeaderboardScreen extends StatelessWidget {
@@ -63,7 +63,7 @@ class LeaderboardScreen extends StatelessWidget {
             //  Fixed user card (below tab bar)
             Container(
               padding: context.paddingHorizontal,
-              child: ProfileCard(
+              child: CommonProfileWidget(
                 isHighlight: true,
                 name: 'Muhammed Rafsal N',
                 rank: 25,
@@ -84,10 +84,8 @@ class LeaderboardScreen extends StatelessWidget {
                     topRight: Radius.circular(32),
                   ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(
-                    top: AppConstants.leaderboardTopPadding,
-                  ), // So list starts inside the curve
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
                   child: TabBarView(
                     children: [
                       LeaderboardList(tabName: 'Weekly'),
@@ -100,36 +98,6 @@ class LeaderboardScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class LeaderboardList extends StatelessWidget {
-  final String tabName;
-
-  const LeaderboardList({super.key, required this.tabName});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> users = dummyUsers;
-
-    return ListView.builder(
-      padding: context.paddingBottomSafe,
-
-      itemCount: users.length,
-      physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) {
-        final user = users[index];
-        return Padding(
-          padding: context.paddingHorizontal,
-          child: ProfileCard(
-            backgroundColor: const Color(0xFFF2F2F2),
-            name: user['name'],
-            rank: user['rank'],
-            points: user['points'],
-          ),
-        );
-      },
     );
   }
 }

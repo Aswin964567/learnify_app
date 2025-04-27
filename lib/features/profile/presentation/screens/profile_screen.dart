@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
             ];
           },
           body: Container(
-            padding: context.paddingM,
+            padding: context.paddingHorizontal,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -112,6 +112,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
+                Gap(16),
                 TabBar(
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
