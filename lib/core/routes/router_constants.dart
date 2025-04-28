@@ -1,4 +1,5 @@
 class RouterConstants {
-  static const String profileRouteName = 'profilescreen';
-  static const String settingsRouteName = 'settingsscreen';
+  static const String profileRouteName = 'profileScreen';
+  static const String settingsRouteName = 'settingsScreen';
+  static const String quizOnboardingRouteName = 'quizOnboardingScreen';
 }

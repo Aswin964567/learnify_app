@@ -10,6 +10,7 @@ class CommonAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      automaticallyImplyLeading: false,
       // expandedHeight: 160,
       floating: false,
       // pinned: true,

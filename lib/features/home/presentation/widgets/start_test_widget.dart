@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
+import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -93,7 +95,7 @@ class StartTestWidget extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle test start logic
+                    context.pushNamed(RouterConstants.quizOnboardingRouteName);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

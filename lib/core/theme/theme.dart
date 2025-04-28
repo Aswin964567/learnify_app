@@ -16,6 +16,7 @@ class AppTheme {
     elevatedButtonTheme: AppButtonTheme.elevatedButtonTheme,
     outlinedButtonTheme: AppButtonTheme.outlinedButtonTheme,
     textTheme: AppTextTheme.lightTextTheme,
+    scaffoldBackgroundColor: Colors.white,
   );
 
   static ThemeData darkTheme = ThemeData(
