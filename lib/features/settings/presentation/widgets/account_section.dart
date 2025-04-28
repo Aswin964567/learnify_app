@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 import 'setting_switch_tile.dart';
@@ -65,7 +66,11 @@ class AccountTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: context.textTheme.bodyLarge?.copyWith(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          // style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         onTap: onTap,
       ),

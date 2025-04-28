@@ -36,15 +36,23 @@ class SettingsScreen extends StatelessWidget {
           Gap(20),
           Center(
             child: Column(
-              children: const [
+              children: [
                 Text(
                   'Learnify v1.0.0',
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                  style: context.textTheme.bodySmall?.copyWith(
+                    fontSize: 12,
+                    color: Colors.grey,
+                  ),
+                  // style: TextStyle(fontSize: 12, color: Colors.grey),
                 ),
                 Gap(4),
                 Text(
                   '© 2025 AppliedCognito',
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                  style: context.textTheme.bodySmall?.copyWith(
+                    fontSize: 12,
+                    color: Colors.grey,
+                  ),
+                  // style: TextStyle(fontSize: 12, color: Colors.grey),
                 ),
               ],
             ),
