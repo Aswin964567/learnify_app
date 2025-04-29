@@ -5,6 +5,8 @@ import 'package:learnify_app/features/quiz/presentation/screens/quiz_onboarding_
 import 'package:learnify_app/features/settings/presentation/screens/settings_screen.dart';
 import 'package:learnify_app/presentation/bottom_nav/bottom_nav_scaffold.dart';
 
+import '../../features/quiz/presentation/screens/quiz_attempt_screen.dart';
+
 final appRouter = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (context, state) => const BottomNavScaffold()),
@@ -22,6 +24,11 @@ final appRouter = GoRouter(
       path: '/quizOnboardingScreen',
       name: RouterConstants.quizOnboardingRouteName,
       builder: (context, state) => QuizOnboardingScreen(),
+    ),
+    GoRoute(
+      path: '/quizAttemptScreen',
+      name: RouterConstants.quizAttemptRouteName,
+      builder: (context, state) => QuizAttemptScreen(),
     ),
   ],
 );
