@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:learnify_app/presentation/widgets/common_appbar.dart';
-import 'package:learnify_app/features/pyq/presentation/pyq_card.dart';
+import 'package:learnify_app/features/pyq/presentation/widgets/pyq_card.dart';
 
 class PreviousYearQuestionsScreen extends StatelessWidget {
   const PreviousYearQuestionsScreen({super.key});
