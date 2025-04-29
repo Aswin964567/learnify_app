@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
-import 'package:learnify_app/core/theme/text_theme.dart';
-
 import 'package:lucide_icons/lucide_icons.dart';
 
 // Profile card widget for displaying rank, name and points.
-class ProfileCard extends StatelessWidget {
+class CommonProfileWidget extends StatelessWidget {
   final int rank;
   final String name;
   final int points;
@@ -15,7 +13,7 @@ class ProfileCard extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
-  const ProfileCard({
+  const CommonProfileWidget({
     super.key,
     required this.rank,
     required this.name,
@@ -32,7 +30,6 @@ class ProfileCard extends StatelessWidget {
       padding: context.paddingM,
 
       decoration: BoxDecoration(
-        
         color: isHighlight ? AppColors.onPrimary : backgroundColor,
         borderRadius: BorderRadius.circular(16),
         boxShadow:
@@ -52,7 +49,7 @@ class ProfileCard extends StatelessWidget {
             backgroundColor: AppColors.onPrimary,
             child: Text(
               rank.toString().padLeft(2, '0'),
-              style: AppTextTheme.textTheme.labelLarge?.copyWith(
+              style: context.textTheme.labelLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AppColors.primary,
               ),
@@ -66,7 +63,7 @@ class ProfileCard extends StatelessWidget {
             children: [
               Text(
                 name,
-                style: AppTextTheme.textTheme.labelLarge?.copyWith(
+                style: context.textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF4E40BD),
                 ),
@@ -85,7 +82,7 @@ class ProfileCard extends StatelessWidget {
                     const Gap(4),
                     Text(
                       '$points',
-                      style: AppTextTheme.textTheme.labelSmall?.copyWith(
+                      style: context.textTheme.labelSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),

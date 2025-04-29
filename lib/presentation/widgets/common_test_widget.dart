@@ -35,7 +35,7 @@ class CommonTestWidget extends StatelessWidget {
         children: [
           Text(
             'Math Fundamentals',
-            style: context.textTheme.bodyMedium?.copyWith(
+            style: context.textTheme.bodyLarge?.copyWith(
               fontWeight: FontWeight.w700,
               fontSize: 16,
             ),
@@ -43,19 +43,19 @@ class CommonTestWidget extends StatelessWidget {
           const Gap(6),
           Text(
             'Practice basic arithmetic and problem solving',
-            style: context.textTheme.labelSmall?.copyWith(
+            style: context.textTheme.labelMedium?.copyWith(
               color: Colors.grey.shade600,
               fontWeight: FontWeight.w600,
             ),
           ),
-          const Gap(6),
+          const Gap(16),
           Row(
             children: [
               const Icon(LucideIcons.bookOpen, size: 15),
               const Gap(6),
               Text(
                 '$totalQuestions questions',
-                style: context.textTheme.labelSmall?.copyWith(
+                style: context.textTheme.labelMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                   color: Colors.grey.shade600,
                 ),
