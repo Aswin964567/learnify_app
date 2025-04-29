@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.0.17
   lucide_icons: ^0.257.0
   carousel_slider: ^5.0.0
+  percent_indicator: ^4.2.5
 
 dev_dependencies:
   flutter_test:

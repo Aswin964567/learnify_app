@@ -1,12 +1,15 @@
 // quiz onboarding screen
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 import 'package:learnify_app/features/quiz/presentation/widgets/paper_selection_box.dart';
 import 'package:learnify_app/presentation/widgets/common_appbar.dart';
 import 'package:learnify_app/presentation/widgets/common_button.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+
+import '../../../../core/routes/router_constants.dart';
 
 class QuizOnboardingScreen extends StatelessWidget {
   const QuizOnboardingScreen({super.key});
@@ -82,6 +85,7 @@ class QuizOnboardingScreen extends StatelessWidget {
                 CommonButton(
                   onPressed: () {
                     // To Quiz attempt screen
+                    context.pushNamed(RouterConstants.quizAttemptRouteName);
                   },
                   widget: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
