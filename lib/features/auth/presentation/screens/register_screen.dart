@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/core/routes/router_constants.dart';
+
 import '../widgets/common_textfield.dart';
 import '../widgets/custom_button.dart';
 
@@ -31,15 +32,10 @@ class RegisterScreen extends StatelessWidget {
 
               Text('Register', style: context.textTheme.headlineLarge),
               Gap(20),
+
               const CommonTextField(
-                label: 'Email',
-                hintText: 'admin@gmail.com',
-                obscureText: false,
-              ),
-              Gap(12),
-              const CommonTextField(
-                label: 'Password',
-                hintText: '**********',
+                label: 'Username',
+                hintText: 'Admin',
                 obscureText: true,
               ),
               Gap(12),
@@ -60,6 +56,18 @@ class RegisterScreen extends StatelessWidget {
                 onPressed: () {
                   context.pushNamed(RouterConstants.homeRouteName);
                 },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Already have account?'),
+                  TextButton(
+                    onPressed: () {
+                      context.pushNamed(RouterConstants.loginRouteName);
+                    },
+                    child: const Text('Login'),
+                  ),
+                ],
               ),
             ],
           ),
