@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:learnify_app/core/routes/router_constants.dart';
 import 'package:learnify_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:learnify_app/features/auth/presentation/screens/onboarding_screen.dart';
 import 'package:learnify_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:learnify_app/features/auth/presentation/screens/splash_screen.dart';
 import 'package:learnify_app/features/profile/presentation/screens/profile_screen.dart';
@@ -22,6 +23,11 @@ final appRouter = GoRouter(
       path: '/registerScreen',
       name: RouterConstants.registerRouteName,
       builder: (context, state) => RegisterScreen(),
+    ),
+    GoRoute(
+      path: '/onboardingcreen',
+      name: RouterConstants.onboardingRouteName,
+      builder: (context, state) => OnboardingScreen(),
     ),
     GoRoute(
       path: '/homeScreen',
