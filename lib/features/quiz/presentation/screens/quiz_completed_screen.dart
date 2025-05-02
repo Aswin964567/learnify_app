@@ -1,6 +1,7 @@
 // quiz completed screen
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/extensions/context_extensions.dart';
 import 'package:learnify_app/presentation/widgets/common_button.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -21,11 +22,11 @@ class QuizCompleteScreen extends StatelessWidget {
             (context, innerBoxIsScrolled) => [const CommonAppbar()],
         body: SingleChildScrollView(
           child: Padding(
-            padding: context.paddingHorizontal,
+            padding: context.paddingHorizontalLarge,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 24),
+                SizedBox(height: AppConstants.defaultTopPadding),
                 Text(
                   'Quiz\nCompleted',
                   textAlign: TextAlign.center,
@@ -40,63 +41,53 @@ class QuizCompleteScreen extends StatelessWidget {
                   height: 160,
                 ),
                 Gap(32),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      MetricCard(
-                        title: 'Total XP',
-                        icon: LucideIcons.zap,
-                        value: '1250',
-                      ),
-                      MetricCard(
-                        title: 'Time',
-                        icon: LucideIcons.clock,
-                        value: '1:45',
-                      ),
-                      MetricCard(
-                        title: 'Accuracy',
-                        icon: LucideIcons.goal,
-                        value: '87%',
-                      ),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    MetricCard(
+                      title: 'Total XP',
+                      icon: LucideIcons.zap,
+                      value: '1250',
+                    ),
+                    MetricCard(
+                      title: 'Time',
+                      icon: LucideIcons.clock,
+                      value: '1:45',
+                    ),
+                    MetricCard(
+                      title: 'Accuracy',
+                      icon: LucideIcons.goal,
+                      value: '87%',
+                    ),
+                  ],
                 ),
                 // const Spacer(),
-                Gap(34),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Column(
-                    children: [
-                      CommonButton(
-                        backgroundColor: Colors.white,
-                        widget: Text(
-                          'Try Again',
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          // Restart the quiz
-                        },
-                      ),
-                      const SizedBox(height: 12),
-                      CommonButton(
-                        widget: Text(
-                          'Continue',
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-
-                        onPressed: () {
-                          // Navigate to the next screen
-                        },
-                      ),
-                    ],
+                Gap(50),
+                CommonButton(
+                  backgroundColor: Colors.white,
+                  widget: Text(
+                    'Try Again',
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  onPressed: () {
+                    // Restart the quiz
+                  },
+                ),
+                const SizedBox(height: 8),
+                CommonButton(
+                  widget: Text(
+                    'Continue',
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  onPressed: () {
+                    // Navigate to the next screen
+                  },
                 ),
                 const SizedBox(height: 32),
               ],
