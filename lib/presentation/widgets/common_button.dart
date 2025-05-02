@@ -3,10 +3,15 @@ import 'package:learnify_app/core/constants/app_constants.dart';
 import 'package:learnify_app/core/theme/colors/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
-  final Color backgroundColor = AppColors.black;
+  final Color backgroundColor;
   final Widget widget;
   final VoidCallback? onPressed;
-  const CommonButton({super.key, required this.widget, this.onPressed});
+  const CommonButton({
+    super.key,
+    required this.widget,
+    this.onPressed,
+    this.backgroundColor = AppColors.black,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class CommonButton extends StatelessWidget {
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
-            side: const BorderSide(color: Color(0xFFEEEEEE)),
+            side: const BorderSide(color: Colors.black),
           ),
         ),
         onPressed: onPressed,
