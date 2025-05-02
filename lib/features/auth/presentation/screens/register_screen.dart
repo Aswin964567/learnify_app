@@ -54,7 +54,7 @@ class RegisterScreen extends StatelessWidget {
               CustomButton(
                 text: 'Register',
                 onPressed: () {
-                  context.pushNamed(RouterConstants.homeRouteName);
+                  context.pushNamed(RouterConstants.onboardingRouteName);
                 },
               ),
               Row(
